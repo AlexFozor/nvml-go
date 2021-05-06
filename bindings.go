@@ -159,7 +159,7 @@ func (a API) ErrorString(result uintptr) string {
 // New creates nvml.dll wrapper
 func New(path string) (*API, error) {
 	if path == "" {
-		path = os.ExpandEnv("$ProgramW6432\\NVIDIA Corporation\\NVSMI\\nvml.dll")
+		path = os.ExpandEnv(`$SystemRoot/system32/nvml.dll`)
 	}
 
 	dll, err := syscall.LoadDLL(path)
